@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Exercise 4</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+		}
+		.container {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			min-height: 100vh;
+		}
+		h1 {
+			color: #333;
+		}
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #333;
+		}
+		input {
+			padding: 5px;
+			border: 1px solid #ccc;
+			border-radius: 3px;
+			margin-bottom: 10px;
+			width: 200px;
+		}
+		button {
+			background-color: #4CAF50;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 3px;
+			cursor: pointer;
+		}
+		button:hover {
+			background-color: #3e8e41;
+		}
+		p {
+			margin-top: 20px;
+			font-size: 18px;
+			color: #333;
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+		<h1>Grams to Other Units Converter</h1>
+		<label for="grams">Enter the weight in grams:</label>
+		<input type="number" id="grams" name="grams" placeholder="Enter grams here" />
+		<br />
+		<button onclick="convert()">Convert</button>
+		<p id="result"></p>
+		<img src="https://www.splashlearn.com/math-vocabulary/wp-content/uploads/2022/10/Grams-to-Kilograms-1.png">
+
+		<script>
+			function convert() {
+				let grams = document.getElementById("grams").value;
+				let kilograms = grams / 1000;
+				let milligrams = grams * 1000;
+				let dekagrams = grams / 10;
+
+				window.alert(`${grams} grams is equal to:\n${kilograms} kilograms\n${milligrams} milligrams\n${dekagrams} dekagrams`);
+			}
+		</script>
+	</div>
+	<footer>
+     <span><small>&copy;yszablan2023</small></span>
+</footer>
+</body>
+</html>
+
+
+
+
+
+
