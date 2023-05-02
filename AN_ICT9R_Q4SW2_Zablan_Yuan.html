@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Q4 Seatwork 2</title>
+	<style>
+		body {
+			background-color: #f2f2f2;
+			font-family: Arial, sans-serif;
+			color: #333;
+		}
+		
+		h1 {
+			color: #006699;
+			text-align: center;
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+		
+		form {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		
+		input[type=text] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #e6e6e6;
+			margin-right: 10px;
+		}
+		
+		button[type=button] {
+			padding: 10px;
+			border-radius: 5px;
+			border: none;
+			background-color: #006699;
+			color: #fff;
+			cursor: pointer;
+		}
+		
+		table {
+			margin: 0 auto;
+			border-collapse: collapse;
+			width: 80%;
+			border: 1px solid #ccc;
+		}
+		
+		th, td {
+			padding: 10px;
+			text-align: center;
+			border: 1px solid #ccc;
+			font-size: 14px;
+			font-weight: normal;
+			color: #333;
+		}
+		
+		th {
+			background-color: #006699;
+			color: #fff;
+			font-size: 16px;
+			font-weight: bold;
+		}
+		
+		#tempDesc {
+			text-align: center;
+			font-size: 16px;
+			font-weight: bold;
+			color: #006699;
+			margin-top: 20px;
+		}
+	</style>
+</head>
+<body>
+	<center><h2>Temperature Conversion</h2>
+	<p id="date"></p>
+
+	<script type="text/javascript">
+		 const DT = new Date();//constant declaration for date object
+		 document.getElementById('date').innerHTML = DT;
+	</script>
+</center>
+	<p id="tempDesc"></p>
+	
+	<table border="1">
+		<tr>
+			<th>Celsius Range</th>
+			<th>Description</th>
+		</tr>
+		<tr>
+			<td>1></td>
+			<td>Freezing point of water</td>
+		</tr>
+		<tr>
+			<td>1 - 10</td>
+			<td>Very cold</td>
+		</tr>
+		<tr>
+			<td>10 - 20</td>
+			<td>Cool</td>
+		</tr>
+		<tr>
+			<td>20 - 25</td>
+			<td>Room temperature</td>
+		</tr>
+		<tr>
+			<td>25 - 30</td>
+			<td>Warm</td>
+		</tr>
+		<tr>
+			<td>30 - 40</td>
+			<td>Hot</td>
+		</tr>
+		<tr>
+			<td> 40+ </td>
+			<td>Very hot</td>
+		</tr>
+	</table>
+
+
+    <p id="tempDesc"></p>
+	
+	<script>
+		function Convert() {
+			let Fah = document.getElementById("num1").value;
+			let Cel = (Fah - 32) * 5/9;
+			
+			let tempDesc = "";
+			
+			if (Cel <= 0) {
+				tempDesc = "Freezing point of water";
+			} else if (Cel > 0 && Cel < 10) {
+				tempDesc = "Very cold";
+			} else if (Cel >= 10 && Cel < 20) {
+				tempDesc = "Cool";
+			} else if (Cel >= 20 && Cel < 25) {
+				tempDesc = "Room temperature";
+			} else if (Cel >= 25 && Cel < 30) {
+				tempDesc = "Warm";
+			} else if (Cel >= 30 && Cel < 40) {
+				tempDesc = "Hot";
+			} else {
+				tempDesc = "Very hot";
+			}
+			
+			window.alert("Value in Celsius: " + Cel + "\nTemperature description: " + tempDesc);
+		}
+            </script>
+     <form>
+		Enter Fahrenheit: <input type="text" id="num1">
+		<button type="button" onclick="Convert()">Convert</button>
+	</form>
+	<footer>
+     <span><small>&copy;yszablan2023</small></span>
+</footer>
+</body>
+</html>
